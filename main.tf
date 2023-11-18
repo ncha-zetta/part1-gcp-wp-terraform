@@ -13,6 +13,7 @@ resource "google_container_cluster" "gke_cluster" {
 
     node_config {
       machine_type = "e2-medium"
+      disk_size_gb = 50
     }
   }
 }
