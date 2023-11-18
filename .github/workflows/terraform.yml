@@ -3,7 +3,7 @@ name: 'Terraform'
 on:
   push:
     branches:
-    - main
+      - main
   pull_request:
 
 jobs:
@@ -15,10 +15,14 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
+    - name: Set up GCP Credentials
+      uses: google-github-actions/setup-gcloud@main
+      with:
+        service_account_key: ${{ secrets.GCP_CREDENTIALS }}
+        project_id: ${{ secrets.GCP_PROJECT }}
+
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v1
-      with:
-        cli_config_credentials_token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Terraform Init
       run: terraform init
@@ -29,12 +33,3 @@ jobs:
     - name: Terraform Apply
       if: github.ref == 'refs/heads/main'
       run: terraform apply -auto-approve
-
-    - name: Set up GCP Credentials
-      uses: google-github-actions/setup-gcloud@main
-      with:
-        service_account_key: ${{ secrets.GCP_CREDENTIALS }}
-        project_id: ${{ secrets.GCP_PROJECT }}
-
-    - name: Terraform Init
-      run: terraform init
