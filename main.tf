@@ -7,7 +7,6 @@ resource "google_container_cluster" "gke_cluster" {
   name     = "wordpress-cluster"
   location = var.region
   remove_default_node_pool = true
-  initial_node_count       = 1
 
   node_pool {
     name       = "wordpress-pool"
