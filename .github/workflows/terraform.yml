@@ -31,7 +31,7 @@ jobs:
       run: terraform apply -auto-approve
 
     - name: Set up GCP Credentials
-      uses: google-github-actions/setup-gcloud@master
+      uses: google-github-actions/setup-gcloud@main
       with:
         service_account_key: ${{ secrets.GCP_CREDENTIALS }}
         project_id: ${{ secrets.GCP_PROJECT }}
