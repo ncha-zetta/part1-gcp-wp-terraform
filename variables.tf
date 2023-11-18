@@ -5,7 +5,7 @@ variable "gcp_project" {
 
 variable "region" {
   description = "GCP region"
-  default     = "europe-central2"
+  default     = "us-east1"
 }
 
 variable "tfstate_bucket" {
