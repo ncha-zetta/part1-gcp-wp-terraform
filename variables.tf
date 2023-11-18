@@ -10,7 +10,7 @@ variable "region" {
 
 variable "wordpress_media_bucket_name" {
   description = "GCP bucket name"
-  default     = "wordpress-media"
+  default     = "wordpress-media-ncha-zetta"
 }
 
 variable "db_password" {
