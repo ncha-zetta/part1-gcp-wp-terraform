@@ -3,6 +3,8 @@ provider "google" {
   region  = var.region
 }
 
+data "google_client_config" "default" {}
+
 provider "kubernetes" {
   host  = google_container_cluster.gke_cluster.endpoint
   token = data.google_client_config.default.access_token
