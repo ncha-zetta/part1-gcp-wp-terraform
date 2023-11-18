@@ -1,8 +1,3 @@
-provider "google" {
-  project = var.gcp_project
-  region  = var.region
-}
-
 resource "google_container_cluster" "gke_cluster" {
   name     = "wordpress-cluster"
   location = var.region
