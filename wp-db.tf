@@ -1,6 +1,7 @@
 resource "google_sql_database" "wordpress" {
   name     = "wordpress"
   instance = google_sql_database_instance.wordpress_db.name
+  depends_on = [google_service_networking_connection.private_vpc_connection]
 }
 
 resource "google_sql_user" "wordpress" {
