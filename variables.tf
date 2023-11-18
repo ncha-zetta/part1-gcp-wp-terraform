@@ -8,7 +8,11 @@ variable "region" {
   default     = "us-east1"
 }
 
-variable "tfstate_bucket" {
-  description = "TF state bucket name"
-  default     = "part1-wp-tfstate"
+variable "wordpress_media_bucket_name" {
+  description = "GCP bucket name"
+  default     = "wordpress-media"
+}
+
+variable "db_password" {
+  description = "Database password"
 }
