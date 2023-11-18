@@ -43,10 +43,10 @@ resource "kubernetes_deployment" "wordpress" {
             value = "wordpress"
           }
 
-          ports {
+          port {
             container_port = 80
           }
-          
+
         }
       }
     }
