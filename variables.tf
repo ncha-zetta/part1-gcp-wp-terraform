@@ -1,5 +1,6 @@
 variable "gcp_project" {
-  description = "copper-index-405519"
+  description = "GCP project name"
+  default     = "copper-index-405519"
 }
 
 variable "region" {
