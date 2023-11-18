@@ -14,5 +14,5 @@ data "google_sql_database_instance" "wordpress_db" {
 }
 
 locals {
-  cloud_sql_private_ip = [for ip in data.google_sql_database_instance.wordpress_db.ip_addresses : ip.ip_address if ip.type == "PRIVATE"][0]
+  cloud_sql_private_ip = [for ip in data.google_sql_database_instance.wordpress_db.ip_address : ip.ip_address if ip.type == "PRIVATE"][0]
 }
