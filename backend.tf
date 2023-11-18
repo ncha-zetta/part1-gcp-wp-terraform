@@ -1,6 +1,6 @@
 terraform {
   backend "gcs" {
-    bucket  = var.tfstate_bucket
+    bucket  = "part1-wp-tfstate"
     prefix  = "terraform/state"
   }
 }
