@@ -25,7 +25,7 @@ resource "kubernetes_deployment" "wordpress" {
 
           env {
             name  = "WORDPRESS_DB_HOST"
-            value = google_sql_database_instance.wordpress_db.public_ip_address
+            value = google_sql_database_instance.wordpress_db.ip_addresses[0].ip_address
           }
 
           env {

@@ -16,3 +16,13 @@ variable "wordpress_media_bucket_name" {
 variable "db_password" {
   description = "Database password"
 }
+
+variable "gke_cluster_name" {
+  description = "The name of the GKE cluster"
+  default     = "wordpress-cluster"
+}
+
+variable "cloud_sql_name" {
+  description = "name of db name"
+  default     = "wordpress-db"
+}

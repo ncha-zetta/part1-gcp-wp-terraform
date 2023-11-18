@@ -1,6 +1,8 @@
 resource "google_container_cluster" "gke_cluster" {
-  name     = "wordpress-cluster"
+  name     = var.gke_cluster_name
   location = var.region
+  network    = google_compute_network.vpc_network.name
+  subnetwork = google_compute_subnetwork.subnet.name
 
   node_pool {
     name       = "wordpress-pool"
@@ -17,4 +19,3 @@ resource "google_container_cluster" "gke_cluster" {
     }
   }
 }
-
