@@ -3,6 +3,10 @@ resource "kubernetes_service" "wordpress" {
     name = "wordpress"
   }
 
+  depends_on = [
+    google_container_cluster.gke_cluster
+  ]
+
   spec {
     selector = {
       app = "wordpress"
