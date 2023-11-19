@@ -1,5 +1,5 @@
 resource "google_compute_network" "vpc_network" {
-  name                    = "wp-vpc-network"
+  name                    = "i-wp-vpc-network"
   auto_create_subnetworks = false
   project                 = var.gcp_project
 }
